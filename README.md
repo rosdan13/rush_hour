@@ -40,6 +40,17 @@ Rush Hour 3D is a C# WPF implementation of the classic sliding block puzzle game
 - 2GB RAM recommended
 - Mouse and keyboard
 
+## Screenshots
+
+### Main Menu
+![Main Menu](screenshots/main-menu.png)
+
+### Gameplay
+![Gameplay Screen](screenshots/gameplay.png)
+
+### Level Selection
+![Level Selection](screenshots/level-select.png)
+
 ## Building the Project
 
 ### Prerequisites
