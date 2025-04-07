@@ -1,0 +1,46 @@
+﻿<Page x:Class="Rush_Hour.MainMenu"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+	Title="MainMenu" RenderTransformOrigin="0.5,0.5" Loaded="OnPageLoaded" MouseDown="OnMouseDown" >
+
+    <Page.Resources>
+        <Border x:Key="MessageBox" Canvas.Top="350" Canvas.Left="450" BorderThickness="10" BorderBrush="#FFEB1F27" Background="#FFEB1F27" Visibility="Hidden" >
+            <TextBlock   Width="1000" Height="300" Text="Are you sure you want to quit?" FontFamily="Aharoni" FontSize="60" TextAlignment="Center" Padding="0,60,0,0" Foreground="#FFB21117"  >
+                <TextBlock.Background>
+                    <ImageBrush ImageSource="/Rush Hour;component/Resources/FineWood.jpg"/>
+                </TextBlock.Background>
+            </TextBlock>
+        </Border>
+        <Image x:Key="V" Source="/Rush Hour;component/Resources/V.png" Canvas.Left="700" Canvas.Top="510" MouseEnter="ImageMouseEnter" MouseLeave="ImageMouseLeave" MouseDown="ImageMouseDown" Visibility="Hidden"/>
+        <Image x:Key="X" Source="/Rush Hour;component/Resources/X.png" Canvas.Left="1120" Canvas.Top="530" MouseEnter="ImageMouseEnter" MouseLeave="ImageMouseLeave" MouseDown="ImageMouseDown" Visibility="Hidden"/>
+
+    </Page.Resources>
+
+    <Page.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FF6090C1" Offset="0"/>
+            <GradientStop Color="#FFA4C4EB" Offset="1"/>
+        </LinearGradientBrush>
+    </Page.Background>
+    <Canvas x:Name="ThisCanvas">
+
+        <Image Source="/Rush Hour;component/Resources/Rush Hour Logo.png" Width="900"/>
+
+
+        <TextBlock x:Name="PressMouse" Text="Press The Mouse Button" FontFamily="Aharoni" FontSize="50" Foreground="White" Width="1920" TextAlignment="Center" Canvas.Top="900" Visibility="Hidden"/>
+
+        <TextBlock x:Name="Start" Text="Start" FontFamily="Aharoni" FontSize="80" Canvas.Top="350" Canvas.Left="75" Foreground="#FFEB1F27" MouseEnter="TextBlockMouseEnter" MouseLeave="TextBlockMouseLeave" MouseDown="TextBlockMouseDown"/>
+        <TextBlock x:Name="HowToPlay" Text="How To Play" FontFamily="Aharoni" FontSize="80" Canvas.Top="465" Canvas.Left="75" Foreground="#FFEB1F27" MouseEnter="TextBlockMouseEnter" MouseLeave="TextBlockMouseLeave" MouseDown="TextBlockMouseDown"/>
+        <TextBlock x:Name="Options" Text="Options" FontFamily="Aharoni" FontSize="80" Canvas.Top="580" Canvas.Left="75" Foreground="#FFEB1F27" MouseEnter="TextBlockMouseEnter" MouseLeave="TextBlockMouseLeave" MouseDown="TextBlockMouseDown"/>
+        <TextBlock x:Name="About" Text="About" FontFamily="Aharoni" FontSize="80" Canvas.Top="695" Canvas.Left="75" Foreground="#FFEB1F27" MouseEnter="TextBlockMouseEnter" MouseLeave="TextBlockMouseLeave" MouseDown="TextBlockMouseDown"/>
+        <TextBlock x:Name="Exit" Text="Exit" FontFamily="Aharoni" FontSize="80" Canvas.Top="810" Canvas.Left="75" Foreground="#FFEB1F27" MouseEnter="TextBlockMouseEnter" MouseLeave="TextBlockMouseLeave" MouseDown="TextBlockMouseDown"/>
+
+
+    </Canvas>
+
+
+</Page>

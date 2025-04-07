@@ -1,0 +1,61 @@
+﻿<Page x:Class="Rush_Hour.About"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Rush_Hour"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+      Title="About" Loaded="OnAboutLoaded">
+    <Page.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FF6090C1" Offset="0"/>
+            <GradientStop Color="#FFA4C4EB" Offset="1"/>
+        </LinearGradientBrush>
+    </Page.Background>
+
+    
+    <Grid>
+        
+        <Viewport3D>
+            <Viewport3D.Camera>
+                <PerspectiveCamera Position="8,8,-1" LookDirection="-8,-8,0"/>
+            </Viewport3D.Camera>
+            <ModelVisual3D>
+                <ModelVisual3D.Content>
+                    <Model3DGroup x:Name="BookScene">
+                        <DirectionalLight Color="White" Direction="-5,-3,3"/>
+                        <DirectionalLight Color="White" Direction="-3,-1,-3"/>
+                        <AmbientLight Color="White"/>
+
+                        <GeometryModel3D>
+                            <GeometryModel3D.Material>
+                                <DiffuseMaterial>
+                                    <DiffuseMaterial.Brush>
+                                        <ImageBrush ImageSource="/Rush Hour;component/Resources/FineWood.jpg" TileMode="Tile" Viewport="0,0,0.08,0.08"/>
+                                    </DiffuseMaterial.Brush>
+                                </DiffuseMaterial>
+                            </GeometryModel3D.Material>
+                            <GeometryModel3D.Geometry>
+                                <MeshGeometry3D Positions="50,-0.5,50 50,-0.5,-50 -50,-0.5,-50 -50,-0.5,50"
+                                                TriangleIndices="0,1,2 0,2,3"
+                                                TextureCoordinates="1,1 1,0 0,0 0,1"/>
+                            </GeometryModel3D.Geometry>
+                        </GeometryModel3D>
+                    </Model3DGroup>
+                </ModelVisual3D.Content>
+            </ModelVisual3D>
+        </Viewport3D>
+        <Canvas x:Name="Text">
+            <TextBlock x:Name="TextBlock1" FlowDirection="RightToLeft" Text="פרויקט גמר בהנדסת תוכנה" FontFamily="FrankRuehl" FontSize="60" FontWeight="Bold" Canvas.Right="80" Canvas.Top="100" Foreground="#FF232946"/>
+            <TextBlock x:Name="TextBlock2" FlowDirection="RightToLeft" Text="&quot;תכנון ותכנות מערכות&quot;" FontFamily="FrankRuehl" FontSize="60" FontWeight="Bold" Canvas.Right="80" Canvas.Top="160" Foreground="#FF232946"/>
+            <TextBlock x:Name="TextBlock3" FlowDirection="RightToLeft" Text="נושא הפרויקט:" FontFamily="FrankRuehl" FontSize="60" FontWeight="Bold" Canvas.Right="80" Canvas.Top="280" Foreground="#FF232946"/>
+            <TextBlock x:Name="TextBlock4" FlowDirection="RightToLeft" Text="משחק פאזל &quot;שעת השיא&quot;" FontFamily="FrankRuehl" FontSize="60" FontWeight="Bold" Canvas.Right="80" Canvas.Top="340" Foreground="#FF232946"/>
+            <TextBlock x:Name="TextBlock5" FlowDirection="RightToLeft" Text="שם: דניאל רוזנצוייג" FontFamily="FrankRuehl" FontSize="60" FontWeight="Bold" Canvas.Right="80" Canvas.Top="460" Foreground="#FF232946"/>
+            <TextBlock x:Name="TextBlock6" FlowDirection="RightToLeft" Text="מורה: אמיר קוגן" FontFamily="FrankRuehl" FontSize="60" FontWeight="Bold" Canvas.Right="80" Canvas.Top="580" Foreground="#FF232946"/>
+            <TextBlock x:Name="TextBlock7" FlowDirection="RightToLeft" Text="שנה: ה'תשע&quot;ז (2017)" FontFamily="FrankRuehl" FontSize="60" FontWeight="Bold" Canvas.Right="80" Canvas.Top="700" Foreground="#FF232946"/>
+
+            <TextBlock x:Name="Back" Text="Back" FontFamily="Aharoni" FontSize="50" Canvas.Top="30" Canvas.Left="30" MouseEnter="OnBackMouseEnter" MouseLeave="OnBackMouseLeave" MouseDown="OnBackMouseDown" Foreground="#FFEB1F27"/>
+        </Canvas>
+    </Grid>
+</Page>

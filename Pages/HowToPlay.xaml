@@ -1,0 +1,39 @@
+﻿<Page x:Class="Rush_Hour.HowToPlay"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+	Title="HowToPlay">
+
+    <Page.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FF6090C1" Offset="0"/>
+            <GradientStop Color="#FFA4C4EB" Offset="1"/>
+        </LinearGradientBrush>
+    </Page.Background>
+
+    <Canvas>
+        <TextBlock Text="How To Play" FontFamily="Aharoni" FontSize="100" Width="1920" TextAlignment="Center" Canvas.Top="50" Foreground="#FFEB1F27"/>
+
+        <StackPanel Width="1320" Canvas.Left="300" Canvas.Top="250">
+            <TextBlock FontFamily="Aharoni" FontSize="45" TextWrapping="Wrap" TextAlignment="Justify" LineHeight="55" Foreground="#FFB21117">The main goal in the game is to escort the red car - <Run Text="       ">
+     <Run.Background>
+         <ImageBrush ImageSource="/Rush Hour;component/Resources/RedCar.bmp">
+             <ImageBrush.RelativeTransform>              
+                     <RotateTransform Angle="270" CenterY="0.5" CenterX="0.5"/>
+             </ImageBrush.RelativeTransform>
+         </ImageBrush>
+     </Run.Background></Run>, out of the heavily crowded parking lot. 
+                        <LineBreak/><LineBreak/> You can move the vehicles on the board horizontally or vertically depending on their direction. You cannot rotate any cars. 
+                        <LineBreak/><LineBreak/> Click on the desired vehicle and the relevant squares will be highlighted in blue. Click on one of those squares and the vehicle will go there.
+                    <LineBreak/><LineBreak/>Once the red car gets to the exit the level is finished.</TextBlock>
+        </StackPanel>
+            <TextBlock FontFamily="Aharoni" FontSize="70" TextAlignment="Center" Width="1920" Canvas.Top="950" Foreground="#FFEB1F27">Good Luck!!!</TextBlock>
+
+
+        <TextBlock Text="Back" FontFamily="Aharoni" FontSize="50" Foreground="#FFEB1F27" Canvas.Top="30" Canvas.Left="30" MouseEnter="OnBackMouseEnter" MouseLeave="OnBackMouseLeave" MouseDown="OnBackMouseDown"/>
+
+    </Canvas>
+</Page>

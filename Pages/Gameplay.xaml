@@ -1,0 +1,522 @@
+﻿<Page x:Class="Rush_Hour.Gameplay"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+	Title="Gameplay">
+    <Page.Resources>
+
+        <DoubleAnimation x:Key="RotationRight" Storyboard.TargetProperty="(AxisAngleRotation3D.Angle)" Storyboard.TargetName="SceneHorizontalRotation" By="-360" Duration="0:0:8" RepeatBehavior="Forever"/>
+
+        <DoubleAnimation x:Key="RotationLeft" Storyboard.TargetProperty="(AxisAngleRotation3D.Angle)" Storyboard.TargetName="SceneHorizontalRotation" By="360" Duration="0:0:8" RepeatBehavior="Forever"/>
+
+        <DoubleAnimation x:Key="RotationUp" Storyboard.TargetProperty="(AxisAngleRotation3D.Angle)" Storyboard.TargetName="SceneVerticalRotation" By="45" Duration="0:0:2" />
+
+        <DoubleAnimation x:Key="RotationDown" Storyboard.TargetProperty="(AxisAngleRotation3D.Angle)" Storyboard.TargetName="SceneVerticalRotation" By="-44" Duration="0:0:2" />
+
+        <MeshGeometry3D x:Key="RoundMesh" Positions="0,1,0" Normals="0,1,0" TextureCoordinates="0.5,0.5"/>
+
+        <Model3DGroup x:Key="Chair">
+            <GeometryModel3D x:Name="Seat" Geometry="{StaticResource Cube}" Material="{StaticResource Wood}">
+                <GeometryModel3D.Transform>
+                    <Transform3DGroup>
+                        <ScaleTransform3D ScaleX="1.5" ScaleY="1" ScaleZ="1.5"/>
+                        <TranslateTransform3D OffsetZ="14" OffsetY="-5"/>
+                    </Transform3DGroup>
+                </GeometryModel3D.Transform>
+            </GeometryModel3D>
+            <GeometryModel3D x:Name="ChairLeg1" Geometry="{StaticResource RoundMesh}" Material="{StaticResource Wood}">
+                <GeometryModel3D.Transform>
+                    <Transform3DGroup>
+                        <ScaleTransform3D ScaleX="0.5" ScaleY="-9.5" ScaleZ="0.5"/>
+                        <TranslateTransform3D OffsetX="-4" OffsetZ="10" OffsetY="-5"/>
+                    </Transform3DGroup>
+                </GeometryModel3D.Transform>
+            </GeometryModel3D>
+            <GeometryModel3D x:Name="ChairLeg2" Geometry="{StaticResource RoundMesh}" Material="{StaticResource Wood}">
+                <GeometryModel3D.Transform>
+                    <Transform3DGroup>
+                        <ScaleTransform3D ScaleX="0.5" ScaleY="-9.5" ScaleZ="0.5"/>
+                        <TranslateTransform3D OffsetX="4" OffsetZ="10" OffsetY="-5"/>
+                    </Transform3DGroup>
+                </GeometryModel3D.Transform>
+            </GeometryModel3D>
+            <GeometryModel3D x:Name="ChairLeg3" Geometry="{StaticResource RoundMesh}" Material="{StaticResource Wood}">
+                <GeometryModel3D.Transform>
+                    <Transform3DGroup>
+                        <ScaleTransform3D ScaleX="0.5" ScaleY="-9.5" ScaleZ="0.5"/>
+                        <TranslateTransform3D OffsetX="-4" OffsetZ="18" OffsetY="-5"/>
+                    </Transform3DGroup>
+                </GeometryModel3D.Transform>
+            </GeometryModel3D>
+            <GeometryModel3D x:Name="ChairLeg4" Geometry="{StaticResource RoundMesh}" Material="{StaticResource Wood}">
+                <GeometryModel3D.Transform>
+                    <Transform3DGroup>
+                        <ScaleTransform3D ScaleX="0.5" ScaleY="-9.5" ScaleZ="0.5"/>
+                        <TranslateTransform3D OffsetX="4" OffsetZ="18" OffsetY="-5"/>
+                    </Transform3DGroup>
+                </GeometryModel3D.Transform>
+            </GeometryModel3D>
+            <GeometryModel3D x:Name="Back1" Geometry="{StaticResource RoundMesh}" Material="{StaticResource Wood}">
+                <GeometryModel3D.Transform>
+                    <Transform3DGroup>
+                        <ScaleTransform3D ScaleX="0.5" ScaleY="9" ScaleZ="0.5"/>
+                        <RotateTransform3D>
+                            <RotateTransform3D.Rotation>
+                                <AxisAngleRotation3D Angle="10" Axis="1,0,0"/>
+                            </RotateTransform3D.Rotation>
+                        </RotateTransform3D>
+                        <TranslateTransform3D OffsetX="4" OffsetZ="18" OffsetY="-3.9"/>
+                    </Transform3DGroup>
+                </GeometryModel3D.Transform>
+            </GeometryModel3D>
+            <GeometryModel3D x:Name="Back2" Geometry="{StaticResource RoundMesh}" Material="{StaticResource Wood}">
+                <GeometryModel3D.Transform>
+                    <Transform3DGroup>
+                        <ScaleTransform3D ScaleX="0.5" ScaleY="9" ScaleZ="0.5"/>
+                        <RotateTransform3D>
+                            <RotateTransform3D.Rotation>
+                                <AxisAngleRotation3D Angle="10" Axis="1,0,0"/>
+                            </RotateTransform3D.Rotation>
+                        </RotateTransform3D>
+                        <TranslateTransform3D OffsetX="-4" OffsetZ="18" OffsetY="-3.9"/>
+                    </Transform3DGroup>
+                </GeometryModel3D.Transform>
+            </GeometryModel3D>
+            <GeometryModel3D x:Name="Back3" Geometry="{StaticResource Cube}" Material="{StaticResource Wood}">
+                <GeometryModel3D.Transform>
+                    <Transform3DGroup>
+                        <ScaleTransform3D ScaleX="1.4" ScaleY="4" ScaleZ="0.05"/>
+                        <RotateTransform3D>
+                            <RotateTransform3D.Rotation>
+                                <AxisAngleRotation3D Angle="10" Axis="1,0,0"/>
+                            </RotateTransform3D.Rotation>
+                        </RotateTransform3D>
+                        <TranslateTransform3D OffsetX="0" OffsetZ="18.7" OffsetY="0"/>
+                    </Transform3DGroup>
+                </GeometryModel3D.Transform>
+            </GeometryModel3D>
+        </Model3DGroup>
+
+        <Model3DGroup x:Key="Environment">
+
+            <Model3DGroup x:Name="Table">
+                <GeometryModel3D x:Name="Surface" Geometry="{DynamicResource RoundMesh}" Material="{StaticResource Wood}">
+                    <GeometryModel3D.Transform>
+                        <Transform3DGroup>
+                            <ScaleTransform3D ScaleX="14" ScaleZ="14"/>
+                            <TranslateTransform3D OffsetY="-1" OffsetZ="-8"/>
+
+                        </Transform3DGroup>
+                    </GeometryModel3D.Transform>
+                </GeometryModel3D>
+
+                <GeometryModel3D x:Name="Leg1" Geometry="{DynamicResource RoundMesh}" Material="{StaticResource Wood}">
+                    <GeometryModel3D.Transform>
+                        <Transform3DGroup>
+                            <ScaleTransform3D ScaleX="0.75" ScaleY="-13.9" ScaleZ="0.75"/>
+                            <RotateTransform3D>
+                                <RotateTransform3D.Rotation>
+                                    <AxisAngleRotation3D Angle="-10" Axis="1,0,1"/>
+                                </RotateTransform3D.Rotation>
+                            </RotateTransform3D>
+                            <TranslateTransform3D OffsetY="-1" OffsetZ="-2" OffsetX="-6"/>
+                        </Transform3DGroup>
+                    </GeometryModel3D.Transform>
+                </GeometryModel3D>
+
+                <GeometryModel3D x:Name="Leg2" Geometry="{DynamicResource RoundMesh}" Material="{StaticResource Wood}">
+                    <GeometryModel3D.Transform>
+                        <Transform3DGroup>
+                            <ScaleTransform3D ScaleX="0.75" ScaleY="-13.9" ScaleZ="0.75"/>
+                            <RotateTransform3D>
+                                <RotateTransform3D.Rotation>
+                                    <AxisAngleRotation3D Angle="10" Axis="-1,0,1"/>
+                                </RotateTransform3D.Rotation>
+                            </RotateTransform3D>
+                            <TranslateTransform3D OffsetY="-1" OffsetZ="-2" OffsetX="6"/>
+                        </Transform3DGroup>
+                    </GeometryModel3D.Transform>
+                </GeometryModel3D>
+
+                <GeometryModel3D x:Name="Leg3" Geometry="{DynamicResource RoundMesh}" Material="{StaticResource Wood}">
+                    <GeometryModel3D.Transform>
+                        <Transform3DGroup>
+                            <ScaleTransform3D ScaleX="0.75" ScaleY="-13.9" ScaleZ="0.75"/>
+                            <RotateTransform3D>
+                                <RotateTransform3D.Rotation>
+                                    <AxisAngleRotation3D Angle="-10" Axis="-1,0,1"/>
+                                </RotateTransform3D.Rotation>
+                            </RotateTransform3D>
+                            <TranslateTransform3D OffsetY="-1" OffsetZ="-14" OffsetX="-6"/>
+                        </Transform3DGroup>
+                    </GeometryModel3D.Transform>
+                </GeometryModel3D>
+
+                <GeometryModel3D x:Name="Leg4" Geometry="{DynamicResource RoundMesh}" Material="{StaticResource Wood}">
+                    <GeometryModel3D.Transform>
+                        <Transform3DGroup>
+                            <ScaleTransform3D ScaleX="0.75" ScaleY="-13.9" ScaleZ="0.75"/>
+                            <RotateTransform3D>
+                                <RotateTransform3D.Rotation>
+                                    <AxisAngleRotation3D Angle="10" Axis="1,0,1"/>
+                                </RotateTransform3D.Rotation>
+                            </RotateTransform3D>
+                            <TranslateTransform3D OffsetY="-1" OffsetZ="-14" OffsetX="6"/>
+                        </Transform3DGroup>
+                    </GeometryModel3D.Transform>
+                </GeometryModel3D>
+            </Model3DGroup>
+
+
+            <Model3DGroup x:Name="Chair1">
+                <StaticResource ResourceKey="Chair"/>
+            </Model3DGroup>
+
+            <Model3DGroup x:Name="Chair2">
+                <StaticResource ResourceKey="Chair"/>
+                <Model3DGroup.Transform>
+                    <RotateTransform3D CenterZ="-8">
+                        <RotateTransform3D.Rotation>
+                            <AxisAngleRotation3D Angle="90" Axis="0,1,0"/>
+                        </RotateTransform3D.Rotation>
+                    </RotateTransform3D>
+                </Model3DGroup.Transform>
+            </Model3DGroup>
+
+            <Model3DGroup x:Name="Chair3">
+                <StaticResource ResourceKey="Chair"/>
+                <Model3DGroup.Transform>
+                    <RotateTransform3D CenterZ="-8">
+                        <RotateTransform3D.Rotation>
+                            <AxisAngleRotation3D Angle="180" Axis="0,1,0"/>
+                        </RotateTransform3D.Rotation>
+                    </RotateTransform3D>
+                </Model3DGroup.Transform>
+            </Model3DGroup>
+
+            <Model3DGroup x:Name="Chair4">
+                <StaticResource ResourceKey="Chair"/>
+                <Model3DGroup.Transform>
+                    <RotateTransform3D CenterZ="-8">
+                        <RotateTransform3D.Rotation>
+                            <AxisAngleRotation3D Angle="270" Axis="0,1,0"/>
+                        </RotateTransform3D.Rotation>
+                    </RotateTransform3D>
+                </Model3DGroup.Transform>
+            </Model3DGroup>
+
+            <StaticResource ResourceKey="House"/>
+
+
+            <GeometryModel3D x:Name="Ground1">
+                <GeometryModel3D.Geometry>
+                    <MeshGeometry3D Positions="800,-15,1000 -800,-15,-800 800,-15,-800 -800,-15,800" TextureCoordinates="0,0 1,0 0,1 1,1" TriangleIndices="2,1,0 1,3,0"/>
+                </GeometryModel3D.Geometry>
+                <GeometryModel3D.Material>
+                    <DiffuseMaterial>
+                        <DiffuseMaterial.Brush>
+                            <ImageBrush ImageSource="/Rush Hour;component/Resources/Grass2.jpg" Viewport="0,0,0.03,0.03" TileMode="Tile"   />
+                        </DiffuseMaterial.Brush>
+                    </DiffuseMaterial>
+                </GeometryModel3D.Material>
+            </GeometryModel3D>
+
+            <GeometryModel3D x:Name="Ground2">
+                <GeometryModel3D.Geometry>
+                    <MeshGeometry3D Positions="15000,-18,15000 -15000,-18,-1000 15000,-18,-1000 -15000,-18,15000" TextureCoordinates="0,0 1,0 0,1 1,1" TriangleIndices="2,1,0 1,3,0"/>
+                </GeometryModel3D.Geometry>
+                <GeometryModel3D.Material>
+                    <DiffuseMaterial>
+                        <DiffuseMaterial.Brush>
+                            <ImageBrush ImageSource="/Rush Hour;component/Resources/Grass2.jpg" Viewport="0,0,0.03,0.03" TileMode="Tile"   />
+                        </DiffuseMaterial.Brush>
+                    </DiffuseMaterial>
+                </GeometryModel3D.Material>
+            </GeometryModel3D>
+
+            <GeometryModel3D x:Name="Sea">
+                <GeometryModel3D.Geometry>
+                    <MeshGeometry3D Positions="15000,-15,-1000 -15000,-15,-15000 15000,-15,-15000 -15000,-15,-1000" TextureCoordinates="0,0 1,0 0,1 1,1" TriangleIndices="2,1,0 1,3,0"/>
+                </GeometryModel3D.Geometry>
+                <GeometryModel3D.Material>
+                    <DiffuseMaterial>
+                        <DiffuseMaterial.Brush>
+                            <ImageBrush ImageSource="/Rush Hour;component/Resources/Water.jpg" Viewport="0,0,0.08,0.08" TileMode="Tile"   />
+                        </DiffuseMaterial.Brush>
+                    </DiffuseMaterial>
+                </GeometryModel3D.Material>
+            </GeometryModel3D>
+
+            <Model3DGroup x:Name="Mountain1">
+                <StaticResource ResourceKey="Mountain"/>
+                <Model3DGroup.Transform>
+                    <Transform3DGroup>
+                        <ScaleTransform3D ScaleY="0.05" ScaleZ="0.01"/>
+                        <TranslateTransform3D OffsetY="-20" OffsetZ="-1000"/>
+                    </Transform3DGroup>
+                </Model3DGroup.Transform>
+            </Model3DGroup>
+
+
+
+            <Model3DGroup x:Name="Mountain2">
+                <StaticResource ResourceKey="Mountain"/>
+                <Model3DGroup.Transform>
+                    <Transform3DGroup>
+                        <ScaleTransform3D ScaleY="2"/>
+                        <RotateTransform3D>
+                            <RotateTransform3D.Rotation>
+                                <AxisAngleRotation3D Axis="0,1,0" Angle="90"/>
+                            </RotateTransform3D.Rotation>
+                        </RotateTransform3D>
+                        <TranslateTransform3D OffsetX="11000" OffsetY="-50" OffsetZ="2000"/>
+
+                    </Transform3DGroup>
+                </Model3DGroup.Transform>
+            </Model3DGroup>
+
+            <Model3DGroup x:Name="Mountain3">
+                <StaticResource ResourceKey="Mountain"/>
+                <Model3DGroup.Transform>
+                    <Transform3DGroup>
+
+                        <ScaleTransform3D ScaleY="2.5" />
+                        <RotateTransform3D>
+                            <RotateTransform3D.Rotation>
+                                <AxisAngleRotation3D Angle="-90" Axis="0,1,0"/>
+                            </RotateTransform3D.Rotation>
+                        </RotateTransform3D>
+                        <TranslateTransform3D OffsetX="-13000" OffsetY="-50" OffsetZ="7000"/>
+                    </Transform3DGroup>
+                </Model3DGroup.Transform>
+            </Model3DGroup>
+
+            <Model3DGroup x:Name="Mountain4">
+                <StaticResource ResourceKey="Mountain"/>
+                <Model3DGroup.Transform>
+                    <Transform3DGroup>
+                        <TranslateTransform3D OffsetZ="15000" OffsetY="-50"/>
+                        <ScaleTransform3D ScaleY="1" ScaleZ="1"/>
+                    </Transform3DGroup>
+                </Model3DGroup.Transform>
+            </Model3DGroup>
+
+        </Model3DGroup>
+
+    </Page.Resources>
+
+    <Page.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FF6090C1" Offset="0"/>
+            <GradientStop Color="#FFA4C4EB" Offset="1"/>
+        </LinearGradientBrush>
+    </Page.Background>
+
+    <Grid >
+
+        <Viewport3D x:Name="Viewport" MouseMove="OnMouseMove" MouseDown="OnMouseDown" KeyDown="OnKeyDown" KeyUp="OnKeyUp" Loaded="ViewportLoaded" MouseWheel="OnMouseWheel">
+
+            <Viewport3D.Camera>
+                <PerspectiveCamera x:Name="Camera" Position="0,18,18" LookDirection="0,-1,-1"/>
+
+
+            </Viewport3D.Camera>
+
+            <ModelVisual3D>
+                <ModelVisual3D.Content>
+                    <Model3DGroup x:Name="Scene">
+                        <Model3DGroup.Transform>
+                            <Transform3DGroup>
+                                <RotateTransform3D>
+                                    <RotateTransform3D.Rotation>
+                                        <AxisAngleRotation3D x:Name="SceneHorizontalRotation" Axis="0,1,0" Angle="0"/>
+                                    </RotateTransform3D.Rotation>
+                                </RotateTransform3D>
+                                <RotateTransform3D>
+                                    <RotateTransform3D.Rotation>
+                                        <AxisAngleRotation3D x:Name="SceneVerticalRotation" Axis="1,0,0" Angle="0"/>
+                                    </RotateTransform3D.Rotation>
+                                </RotateTransform3D>
+                            </Transform3DGroup>
+                        </Model3DGroup.Transform>
+
+                        <DirectionalLight Direction="0,1,0" Color="White"/>
+                        <DirectionalLight Direction="-1.1917,-1.8,1" Color="White"/>
+                        <DirectionalLight Direction="-0.1763,-1.8,-1" Color="White" />
+                        <DirectionalLight Direction="2.7474,-1.8,1" Color="White" />
+
+                        <Model3DGroup x:Name="Board">
+
+                            <GeometryModel3D x:Name="Platform"  Geometry="{StaticResource Cube}" Material="{StaticResource Gray2}"/>
+
+                            <GeometryModel3D x:Name="RightWall1" Geometry="{StaticResource Cube}" Material="{StaticResource Gray3}">
+                                <GeometryModel3D.Transform>
+                                    <Transform3DGroup>
+                                        <ScaleTransform3D ScaleX="0.07083333333" ScaleZ="0.333333333" ScaleY="0.86363636"/>
+                                        <TranslateTransform3D OffsetX="3.2125" OffsetZ="-2" OffsetY="0.55"/>
+                                    </Transform3DGroup>
+                                </GeometryModel3D.Transform>
+                            </GeometryModel3D>
+
+                            <GeometryModel3D x:Name="RightWall2" Geometry="{StaticResource Cube}" Material="{StaticResource Gray3}">
+                                <GeometryModel3D.Transform>
+                                    <Transform3DGroup>
+                                        <ScaleTransform3D ScaleX="0.07083333333" ScaleZ="0.5" ScaleY="0.86363636"/>
+                                        <TranslateTransform3D OffsetX="3.2125" OffsetZ="1.5" OffsetY="0.55"/>
+                                    </Transform3DGroup>
+                                </GeometryModel3D.Transform>
+                            </GeometryModel3D>
+
+                            <GeometryModel3D x:Name="RightWall3" Geometry="{StaticResource Cube}" Material="{StaticResource Gray3}">
+                                <GeometryModel3D.Transform>
+                                    <Transform3DGroup>
+                                        <ScaleTransform3D ScaleX="0.07083333333" ScaleZ="0.2" ScaleY="0.521"/>
+                                        <TranslateTransform3D OffsetX="3.2125" OffsetZ="-0.5" OffsetY="0.55"/>
+                                    </Transform3DGroup>
+                                </GeometryModel3D.Transform>
+                            </GeometryModel3D>
+
+                            <GeometryModel3D x:Name="LeftWall" Geometry="{StaticResource Cube}" Material="{StaticResource Gray3}">
+                                <GeometryModel3D.Transform>
+                                    <Transform3DGroup>
+                                        <ScaleTransform3D ScaleX="0.07083333333" ScaleY="0.86363636"/>
+                                        <TranslateTransform3D OffsetX="-3.2125" OffsetY="0.55"/>
+                                    </Transform3DGroup>
+                                </GeometryModel3D.Transform>
+                            </GeometryModel3D>
+
+                            <GeometryModel3D x:Name="FrontWall" Geometry="{StaticResource Cube}" Material="{StaticResource Gray3}">
+                                <GeometryModel3D.Transform>
+                                    <Transform3DGroup>
+                                        <ScaleTransform3D ScaleZ="0.1583333333" ScaleX="1.141666667" ScaleY="0.86363636"/>
+                                        <TranslateTransform3D OffsetZ="3.475"  OffsetY="0.55"/>
+                                    </Transform3DGroup>
+                                </GeometryModel3D.Transform>
+                            </GeometryModel3D>
+
+                            <GeometryModel3D x:Name="BackWall" Geometry="{StaticResource Cube}" Material="{StaticResource Gray3}">
+                                <GeometryModel3D.Transform>
+                                    <Transform3DGroup>
+                                        <ScaleTransform3D ScaleZ="0.1" ScaleX="1.141666667" ScaleY="0.86363636"/>
+                                        <TranslateTransform3D OffsetZ="-3.3"  OffsetY="0.55"/>
+                                    </Transform3DGroup>
+                                </GeometryModel3D.Transform>
+                            </GeometryModel3D>
+
+                            <GeometryModel3D x:Name="CardStand" Geometry="{StaticResource Cube}" Material="{StaticResource Gray3}">
+                                <GeometryModel3D.Transform>
+                                    <Transform3DGroup>
+                                        <ScaleTransform3D ScaleX="0.5" ScaleZ="0.05" ScaleY="0.1"/>
+                                        <TranslateTransform3D OffsetZ="-3.3" OffsetY="1.5" />
+                                    </Transform3DGroup>
+                                </GeometryModel3D.Transform>
+                            </GeometryModel3D>
+
+                            <GeometryModel3D x:Name="Card" Geometry="{StaticResource Cube}">
+                                <GeometryModel3D.Transform>
+                                    <Transform3DGroup>
+                                        <ScaleTransform3D ScaleX="0.458333333333333" ScaleZ="0.001" ScaleY="4.090909091"/>
+                                        <TranslateTransform3D OffsetZ="-2.9" OffsetY="1.61"/>
+                                        <RotateTransform3D>
+                                            <RotateTransform3D.Rotation>
+                                                <AxisAngleRotation3D Axis="1,0,0" Angle="-12"/>
+                                            </RotateTransform3D.Rotation>
+                                        </RotateTransform3D>
+                                    </Transform3DGroup>
+                                </GeometryModel3D.Transform>
+                                <GeometryModel3D.Material>
+                                    <DiffuseMaterial Brush="White"/>
+                                </GeometryModel3D.Material>
+                            </GeometryModel3D>
+
+                            <GeometryModel3D x:Name="CardContent">
+                                <GeometryModel3D.Geometry>
+                                    <MeshGeometry3D Positions="3,0,3 -3,0,3 3,1,3 -3,1,3"
+                                    TriangleIndices="0,3,1 0,2,3"
+                                    TextureCoordinates="1,1 0,1 1,0 0,0"/>
+                                </GeometryModel3D.Geometry>
+                                <GeometryModel3D.Transform>
+                                    <Transform3DGroup>
+                                        <ScaleTransform3D ScaleX="0.458333333333333" ScaleZ="0.001" ScaleY="4.090909091"/>
+                                        <TranslateTransform3D OffsetZ="-2.88" OffsetY="1.98"/>
+                                        <RotateTransform3D>
+                                            <RotateTransform3D.Rotation>
+                                                <AxisAngleRotation3D Axis="1,0,0" Angle="-12"/>
+                                            </RotateTransform3D.Rotation>
+                                        </RotateTransform3D>
+                                    </Transform3DGroup>
+                                </GeometryModel3D.Transform>
+                            </GeometryModel3D>
+
+                        </Model3DGroup>
+
+                        <GeometryModel3D x:Name="Floor">
+                            <GeometryModel3D.Geometry>
+                                <MeshGeometry3D Positions="15000,-15,15000 -15000,-15,-15000 15000,-15,-15000 -15000,-15,15000" TriangleIndices="2,1,0 1,3,0"/>
+                            </GeometryModel3D.Geometry>
+                            <GeometryModel3D.Material>
+                                <DiffuseMaterial/>
+                            </GeometryModel3D.Material>
+                        </GeometryModel3D>
+
+                        <GeometryModel3D x:Name="Sky" Geometry="{StaticResource Cube}">
+                            <GeometryModel3D.BackMaterial>
+                                <DiffuseMaterial/>
+                            </GeometryModel3D.BackMaterial>
+                            <GeometryModel3D.Transform>
+                                <ScaleTransform3D ScaleX="100" ScaleY="100" ScaleZ="100"/>
+                            </GeometryModel3D.Transform>
+                        </GeometryModel3D>
+
+                    </Model3DGroup>
+                </ModelVisual3D.Content>
+            </ModelVisual3D>
+
+        </Viewport3D>
+
+        <Canvas x:Name="HUD">
+            <Image Source="/Rush Hour;component/Resources/wasd.png" Width="96" Canvas.Bottom="25" Canvas.Left="30"/>
+            <TextBlock FontFamily="Aharoni" FontSize="20" Canvas.Bottom="55" Canvas.Left="125">Rotate<LineBreak/>Camera</TextBlock>
+            <Image Source="/Rush Hour;component/Resources/mousehweel.png" Width="64" Canvas.Bottom="40" Canvas.Left="230"/>
+            <TextBlock FontFamily="Aharoni" FontSize="20" Canvas.Bottom="55" Canvas.Left="295">Zoom<LineBreak/>In/Out</TextBlock>
+            <Image Source="/Rush Hour;component/Resources/C.png" Width="80" Canvas.Bottom="40" Canvas.Left="390"/>
+            <TextBlock FontFamily="Aharoni" FontSize="20" Canvas.Bottom="55" Canvas.Left="462">Reset<LineBreak/>Camera</TextBlock>
+
+            <Image Canvas.Top="30" Canvas.Left="30" Width="70" Source="/Rush Hour;component/Resources/Quit.png" MouseEnter="QuitMouseEnter" MouseLeave="QuitMouseLeave" MouseDown="QuitMouseDown"/>
+            
+            <Border x:Name="MessageBox" Canvas.Top="350" Canvas.Left="700" BorderThickness="10" BorderBrush="#FFEB1F27" Background="#FFEB1F27" Visibility="Hidden" >
+            <TextBlock   Width="500" Height="150" Text="Return to the Main Menu?" FontFamily="Aharoni" FontSize="30" TextAlignment="Center" Padding="0,30,0,0" Foreground="#FFB21117"  >
+                <TextBlock.Background>
+                    <ImageBrush ImageSource="/Rush Hour;component/Resources/FineWood.jpg"/>
+                </TextBlock.Background>
+            </TextBlock>
+        </Border>
+
+        <Image x:Name="V" Source="/Rush Hour;component/Resources/V.png" Width="64" Canvas.Left="825" Canvas.Top="440" Visibility="Hidden" MouseEnter="ImageMouseEnter" MouseLeave="ImageMouseLeave" MouseDown="ImageMouseDown"/>
+        <Image x:Name="X" Source="/Rush Hour;component/Resources/X.png" Width="50" Canvas.Left="1045" Canvas.Top="448" Visibility="Hidden"  MouseEnter="ImageMouseEnter" MouseLeave="ImageMouseLeave" MouseDown="ImageMouseDown"/>
+        </Canvas>
+
+        
+
+
+        <Canvas x:Name="CompletionCanvas" Visibility="Hidden">
+            <TextBlock x:Name="Congratulations1" Canvas.Left="184" Canvas.Top="300" FontFamily="Aharoni" FontSize="200" Text="Congratulations!" Opacity="0">
+                <TextBlock.Foreground>
+                    <ImageBrush ImageSource="/Rush Hour;component/Resources/Water.jpg"/>
+                </TextBlock.Foreground>
+                <TextBlock.Background>
+                    <ImageBrush/>
+                </TextBlock.Background>
+            </TextBlock>
+            <TextBlock x:Name="Congratulations2" Canvas.Left="188" Canvas.Top="304" FontFamily="Aharoni" FontSize="200" Text="Congratulations!" Opacity="0">
+                <TextBlock.Foreground>
+                    <ImageBrush ImageSource="/Rush Hour;component/Resources/Walnut.jpg"/>
+                </TextBlock.Foreground>
+            </TextBlock>
+            <TextBlock x:Name="MainMenuTextBlock" Text="Main Menu"  FontFamily="Aharoni" FontSize="80" Canvas.Left="745" Canvas.Top="510"  Foreground="#FFEB1F27" MouseEnter="MainMenuOnMouseEnter" MouseLeave="MainMenuOnMouseLeave" MouseDown="MainMenuOnMouseDown" Opacity="0"/>
+        </Canvas>
+    </Grid>
+</Page>
