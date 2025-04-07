@@ -43,7 +43,7 @@ namespace Rush_Hour
 
             Materials = new MaterialGroup();                             //החומר של הרכב בצבע המתאים
             Materials.Children.Add(new DiffuseMaterial(new SolidColorBrush(Color)));
-            Materials.Children.Add(new SpecularMaterial(new SolidColorBrush(Colors.White), 60));
+            Materials.Children.Add(new SpecularMaterial(new SolidColorBrush(Colors.White), 100));
             SolidColorBrush EmissiveBrush = new SolidColorBrush(Color);
             EmissiveBrush.Opacity = 0;
             Materials.Children.Add(new EmissiveMaterial(EmissiveBrush));
