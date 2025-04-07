@@ -1,0 +1,239 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{05ABD83F-533C-4EE1-A261-EA2B6BDD73AC}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Rush_Hour</RootNamespace>
+    <AssemblyName>Rush Hour</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Classes\Card.cs" />
+    <Compile Include="Pages\About.xaml.cs">
+      <DependentUpon>About.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\GameBoard.cs" />
+    <Compile Include="Classes\BuildLevel.cs" />
+    <Compile Include="Classes\PageSwitch.cs" />
+    <Compile Include="Classes\Highlighted.cs" />
+    <Compile Include="Classes\Levels.cs" />
+    <Compile Include="Pages\Gameplay.xaml.cs">
+      <DependentUpon>Gameplay.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\HowToPlay.xaml.cs">
+      <DependentUpon>HowToPlay.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\LevelSelect.xaml.cs">
+      <DependentUpon>LevelSelect.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MainMenu.xaml.cs">
+      <DependentUpon>MainMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Options.xaml.cs">
+      <DependentUpon>Options.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\ProjectTools.cs" />
+    <Compile Include="Classes\Square.cs" />
+    <Compile Include="Classes\Vehicle.cs" />
+    <Compile Include="Classes\SceneCamera.cs" />
+    <Compile Include="Classes\Settings.cs" />
+    <Compile Include="Classes\Vehicle2D.cs" />
+    <Page Include="Pages\About.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Gameplay.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\HowToPlay.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\LevelSelect.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\MainMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Resources\Objects3D.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Options.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MKXG.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Cursor.cur" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FineWood.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Grass2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Ash.jpg" />
+    <Resource Include="Resources\crep.jpg" />
+    <Resource Include="Resources\Walnut.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Water.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\CodeScreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ToraScreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\iosScreen.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BlueTruck.bmp" />
+    <Resource Include="Resources\BrownCar.bmp" />
+    <Resource Include="Resources\CyanCar.bmp" />
+    <Resource Include="Resources\GreenCar.bmp" />
+    <Resource Include="Resources\GreenTruck.bmp" />
+    <Resource Include="Resources\LightBlueCar.bmp" />
+    <Resource Include="Resources\LightCyanCar.bmp" />
+    <Resource Include="Resources\OrangeCar.bmp" />
+    <Resource Include="Resources\PinkCar.bmp" />
+    <Resource Include="Resources\PinkTruck.bmp" />
+    <Resource Include="Resources\PurpleCar.bmp" />
+    <Resource Include="Resources\RedCar.bmp" />
+    <Resource Include="Resources\YelloTruck.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LightBrownCar.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\LightPurpleCar.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Card.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DarkGreenCar.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\mousehweel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\wasd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Rush Hour Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\V.png" />
+    <Resource Include="Resources\X.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\C.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Quit.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
