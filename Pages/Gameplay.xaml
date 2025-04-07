@@ -343,10 +343,13 @@
                             </Transform3DGroup>
                         </Model3DGroup.Transform>
 
-                        <DirectionalLight Direction="0,1,0" Color="White"/>
-                        <DirectionalLight Direction="-1.1917,-1.8,1" Color="White"/>
-                        <DirectionalLight Direction="-0.1763,-1.8,-1" Color="White" />
-                        <DirectionalLight Direction="2.7474,-1.8,1" Color="White" />
+                        <!--<DirectionalLight Direction="0,1,0" Color="White"/>-->
+                        <DirectionalLight Direction="-1,-1.8,-1.2" Color="LightYellow"/>
+                        <!--<DirectionalLight Direction="-1.1917,-1.8,1" Color="White"/>
+
+                        <DirectionalLight Direction="-0.1763,-1.8,-1" Color="White" /> 
+                        <DirectionalLight Direction="2.7474,-1.8,1" Color="White" /> -->
+                        <AmbientLight Color="#505055"/>
 
                         <Model3DGroup x:Name="Board">
 
