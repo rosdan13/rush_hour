@@ -34,7 +34,7 @@ Rush Hour 3D is a C# WPF implementation of the classic sliding block puzzle game
 
 ## System Requirements
 - Windows operating system
-- .NET Framework 4.0 or higher
+- .NET Framework 4.8
 - DirectX 9 or higher (for 3D rendering)
 - 2GB RAM recommended
 - Mouse and keyboard
@@ -42,24 +42,28 @@ Rush Hour 3D is a C# WPF implementation of the classic sliding block puzzle game
 ## Building the Project
 
 ### Prerequisites
-- Visual Studio 2010 or higher
-- .NET Framework 4.0 SDK
+- Visual Studio 2019/2022
+- .NET Framework 4.8 SDK (included with Visual Studio 2019/2022)
 
-### Build Steps
+### Build Steps in Visual Studio (Recommended)
 1. **Clone or download the repository**
    ```
-   git clone https://github.com/username/rush_hour.git
+   git clone https://github.com/rosdan13/rush_hour.git
    ```
 
 2. **Open the project in Visual Studio**
    - Open Visual Studio
    - Select File > Open > Project/Solution
-   - Navigate to the project directory and select the `Rush Hour.csproj` file
+   - Navigate to the project directory 
+   - Select the `Rush Hour.csproj` file
 
 3. **Set the build configuration**
-   - Select Build > Configuration Manager
-   - Set Active Solution Configuration to "Release"
-   - Set Active Solution Platform to "x86"
+   - In the toolbar at the top, ensure the build configuration is set to "Release"
+   - Also ensure the platform is set to "x86"
+   - Alternatively, you can:
+     - Select Build > Configuration Manager
+     - Set Active Solution Configuration to "Release"
+     - Set Active Solution Platform to "x86"
 
 4. **Build the solution**
    - Select Build > Build Solution (or press F6)
@@ -122,14 +126,27 @@ Rush Hour 3D is a C# WPF implementation of the classic sliding block puzzle game
    - **Environment**: Toggle 3D environment elements (on/off)
    - **Squares**: Choose highlight color (blue/red)
 
-## Game Development Information
-This game was developed as a final project in software engineering by Daniel Rosenzweig in 2017. The implementation showcases various programming techniques including 3D rendering, animation, event handling, and object-oriented design principles in a WPF application.
-
 ## Troubleshooting
-- **Game crashes on startup**: Ensure you have the correct .NET Framework version installed
+
+### Common Build Issues
+- **Target Framework Error**: If you receive an error about missing .NET Framework 4.0 assemblies, you need to retarget the project:
+  1. Right-click on the project in Solution Explorer
+  2. Select "Properties"
+  3. Go to the "Application" tab
+  4. Change the "Target framework" to ".NET Framework 4.8"
+  5. Save and reload the project when prompted
+
+- **Project won't load**: Make sure you're selecting the `Rush Hour.csproj` file when opening
+- **Build configuration issues**: Ensure you're using the Release/x86 configuration
+
+### Runtime Issues
+- **Game crashes on startup**: Ensure you have DirectX and appropriate video drivers
 - **Low frame rate**: Try disabling the environment in Options
 - **Controls not responding**: Make sure the game window is in focus
 - **Visual artifacts**: Update your graphics drivers
+
+## Game Development Information
+This game was developed as a final project in software engineering by Daniel Rosenzweig in 2017. The implementation showcases various programming techniques including 3D rendering, animation, event handling, and object-oriented design principles in a WPF application.
 
 ## License
 The game was created as an educational project in 2017.
