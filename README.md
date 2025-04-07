@@ -9,7 +9,7 @@ Rush Hour 3D is a C# WPF implementation of the classic sliding block puzzle game
 - **40 Puzzle Levels**: Ranging from beginner to expert difficulty
 - **Customizable Settings**: Toggle environment details and adjust highlight colors
 - **Animated Transitions**: Smooth animations for vehicle movement and UI transitions
-- **Level Selection Interface**: Visual grid of all available puzzles with difficulty indicators
+- **Level Selection Interface**: Visual grid of all available puzzles with difficulty indicators, featuring dynamically rendered level cards that are built with game logic rather than static images
 - **Detailed Instructions**: Built-in "How to Play" guide for new players
 
 ## Game Mechanics
@@ -31,6 +31,7 @@ Rush Hour 3D is a C# WPF implementation of the classic sliding block puzzle game
 - Implements a robust game state management system
 - Features a well-organized MVVM-like architecture
 - Responsive UI that adapts to different screen resolutions
+- Dynamic level card generation system that renders actual vehicle layouts with game logic, not static images
 
 ## System Requirements
 - Windows operating system
@@ -45,7 +46,7 @@ Rush Hour 3D is a C# WPF implementation of the classic sliding block puzzle game
 - Visual Studio 2019/2022
 - .NET Framework 4.8 SDK (included with Visual Studio 2019/2022)
 
-### Build Steps in Visual Studio (Recommended)
+### Build Steps in Visual Studio
 1. **Clone or download the repository**
    ```
    git clone https://github.com/rosdan13/rush_hour.git
@@ -76,7 +77,7 @@ Rush Hour 3D is a C# WPF implementation of the classic sliding block puzzle game
 ### Project Structure
 - **Classes/**: Contains game logic classes
   - `BuildLevel.cs`: Handles level construction
-  - `Card.cs`: Level card visualization
+  - `Card.cs`: Dynamic level card visualization that renders actual vehicle layouts with game logic
   - `GameBoard.cs`: Core gameplay logic
   - `Highlighted.cs`: Base class for highlightable objects
   - `Levels.cs`: Level definitions
@@ -110,6 +111,7 @@ Rush Hour 3D is a C# WPF implementation of the classic sliding block puzzle game
 
 3. **Level Selection**
    - Choose from 40 levels arranged by difficulty
+   - Each level card is dynamically rendered using the actual game logic, showing the true starting position of vehicles 
    - Hover over a card to see it enlarge
    - Click a card to start that level
 
